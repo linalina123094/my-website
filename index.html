@@ -41,18 +41,20 @@
               <li class="scroll-to-section"><a href="#">주거</a></li>
               <li class="scroll-to-section"><a href="#">생활</a></li>
               <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
-                <div class="main-blue-button" style="margin: 0;">
+                <div class="main-blue-button" style="margin: 0; position: relative;">
                   <select id="language-select" style="
                     border: none; 
                     border-radius: 6px; 
                     background-color: rgba(255,255,255,0.95); 
                     color: #333; 
-                    padding: 10px 15px; 
+                    padding: 10px 40px 10px 15px; 
                     font-size: 14px;
                     line-height: 1.2;
                     appearance: none; 
                     -webkit-appearance: none;
                     -moz-appearance: none;
+                    min-width: 150px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.15);
                   ">
                     <option value="ko">한국어</option>
                     <option value="en">English</option>
@@ -60,6 +62,15 @@
                     <option value="zh">中文</option>
                     <option value="vi">Tiếng Việt</option>
                   </select>
+                  <span style="
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                    font-size: 12px;
+                    color: #333;
+                  ">▼</span>
                 </div>
               </li>
             </ul>
