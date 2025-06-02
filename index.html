@@ -54,39 +54,63 @@
 <body>
 
   <!-- Header -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <a href="index.html" class="logo">
-              <h4>CheckMate <img src="assets/images/logo-icon.png" alt=""></h4>
-            </a>
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">홈</a></li>
-              <li class="scroll-to-section"><a href="#features">체크리스트</a></li>
-              <li class="scroll-to-section"><a href="#about">About Us</a></li>
-              <li class="scroll-to-section"><a href="#services">기능</a></li>
-              <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
-                <div class="main-blue-button" style="margin: 0; position: relative;">
-                  <select id="language-select">
-                    <option value="ko">한국어</option>
-                    <option value="en">English</option>
-                    <option value="mn">Монгол</option>
-                    <option value="zh">中文</option>
-                    <option value="vi">Tiếng Việt</option>
-                  </select>
-                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
-                </div>
-              </li>
-            </ul>
-            <a class='menu-trigger'><span>Menu</span></a>
-          </nav>
-        </div>
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- 로고 -->
+          <a href="index.html" class="logo">
+            <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
+          </a>
+          <!-- 메뉴 -->
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+            <li class="scroll-to-section"><a href="#features">체크리스트</a></li>
+            <li class="scroll-to-section"><a href="#about">About Us</a></li>
+            <li class="scroll-to-section"><a href="#services">기능</a></li>
+            <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
+              <div class="main-blue-button" style="margin: 0; position: relative;">
+                <select id="language-select" style="
+                  border: none; 
+                  border-radius: 6px; 
+                  background-color: rgba(255,255,255,0.95); 
+                  color: #333; 
+                  padding: 10px 40px 10px 15px; 
+                  font-size: 16px;
+                  line-height: 1.2;
+                  appearance: none;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  min-width: 150px;
+                  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+                ">
+                  <option value="ko">한국어</option>
+                  <option value="en">English</option>
+                  <option value="mn">Монгол</option>
+                  <option value="zh">中文</option>
+                  <option value="vi">Tiếng Việt</option>
+                </select>
+                <span style="
+                  position: absolute;
+                  right: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  pointer-events: none;
+                  font-size: 12px;
+                  color: #333;
+                ">▼</span>
+              </div>
+            </li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+        </nav>
       </div>
     </div>
-  </header>
-
+  </div>
+</header>
   <!-- 메인 배너 -->
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
@@ -181,51 +205,6 @@
       </div>
     </div>
   </div> 
-    <!-- 기능 -->
-  <div id="services" class="our-services section">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h2>주요 기능</h2>
-        <p>CheckMate가 제공하는 핵심 기능을 확인하세요.</p>
-      </div>
-      <div class="row">
-
-        <!-- 다국어 지원 -->
-        <div class="col-lg-4">
-          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
-            <div class="icon mb-3">
-              <img src="assets/images/service-icon-01.png" alt="">
-            </div>
-            <h4>다국어 지원</h4>
-            <p>한국어, 영어, 몽골어, 중국어, 베트남어까지 다양한 언어로 서비스 제공</p>
-          </div>
-        </div>
-
-        <!-- 챗봇 -->
-        <div class="col-lg-4">
-          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
-            <div class="icon mb-3">
-              <img src="assets/images/service-icon-02.png" alt="">
-            </div>
-            <h4>챗봇 상담</h4>
-            <p>언제든지 궁금한 점을 챗봇을 통해 빠르고 쉽게 문의 가능</p>
-          </div>
-        </div>
-
-        <!-- 돋보기/꿀팁 -->
-        <div class="col-lg-4">
-          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
-            <div class="icon mb-3">
-              <img src="assets/images/service-icon-03.png" alt="">
-            </div>
-            <h4>돋보기 꿀팁</h4>
-            <p>한국 생활의 맥락을 쉽게 이해할 수 있도록 상황별 꿀팁과 배경설명 제공</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
     <!-- 기능 -->
   <div id="services" class="our-services section">
     <div class="container">
