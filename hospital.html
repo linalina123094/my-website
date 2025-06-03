@@ -185,38 +185,74 @@
     myModal.show();
   }
 </script>
-  <!-- STEP 2 -->
-  <div id="step2" class="step-content d-none text-center">
-    <h4 class="mb-4">병원 선택하기</h4>
-    <div class="container d-flex flex-column align-items-center">
-      <!-- 체크리스트 카드 반복 -->
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
-          <input class="form-check-input step2" type="checkbox" id="s2_1">
-          <label class="form-check-label" for="s2_1">증상에 맞는 진료과 확인하기</label>
-        </div>
+<!-- STEP 2 -->
+<div id="step2" class="step-content d-none text-center">
+  <h4 class="mb-4 d-flex justify-content-center align-items-center">
+    병원 선택하기
+    <img src="assets/images/honey-icon.png" onclick="showStep2Tip()" 
+         style="width: 40px; height: 40px; margin-left: 15px; cursor: pointer;">
+  </h4>
+
+  <div class="container d-flex flex-column align-items-center">
+    <!-- 체크리스트 카드 반복 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start">
+        <input class="form-check-input step2" type="checkbox" id="s2_1">
+        <label class="form-check-label" for="s2_1">증상에 맞는 진료과 확인하기</label>
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
-          <input class="form-check-input step2" type="checkbox" id="s2_2">
-          <label class="form-check-label" for="s2_2">가까운 병원 위치 확인하기</label>
-        </div>
+    </div>
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start">
+        <input class="form-check-input step2" type="checkbox" id="s2_2">
+        <label class="form-check-label" for="s2_2">가까운 병원 위치 확인하기</label>
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
-          <input class="form-check-input step2" type="checkbox" id="s2_3">
-          <label class="form-check-label" for="s2_3">예약 여부 확인하기</label>
-        </div>
+    </div>
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start">
+        <input class="form-check-input step2" type="checkbox" id="s2_3">
+        <label class="form-check-label" for="s2_3">예약 여부 확인하기</label>
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
-          <input class="form-check-input step2" type="checkbox" id="s2_4">
-          <label class="form-check-label" for="s2_4">외국인 진료 가능 병원 선택하기</label>
-        </div>
+    </div>
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start">
+        <input class="form-check-input step2" type="checkbox" id="s2_4">
+        <label class="form-check-label" for="s2_4">외국인 진료 가능 병원 선택하기</label>
       </div>
-      <button class="reset-btn" onclick="resetStep(2)">초기화</button>
+    </div>
+    <button class="reset-btn" onclick="resetStep(2)">초기화</button>
+  </div>
+</div>
+
+<!-- STEP2 꿀팁 팝업 -->
+<div class="modal fade" id="step2TipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 400px; margin:auto; border-radius: 20px; padding: 30px;">
+      <h5 class="fw-bold mb-4" style="font-size: 22px;">병원 가기 전에, 이걸 먼저 확인하세요!</h5>
+      <p>
+        1. 가벼운 증상이라면? 의무실 이용<br>
+        • 감기약, 두통약, 소화제, 상처 치료 등은 학교 내 의무실에서 받을 수 있어요.<br>
+        • 위치: 종합복지관 4층 401호<br>
+        • 운영시간: 학기 중: 09:00 ~ 16:00 / 방학 중: 09:30 ~ 16:00<br>
+        (점심시간 12:00 ~ 13:00 제외)<br><br>
+
+        2. 응급 상황일 땐 119!<br>
+        • 갑자기 아프거나 사고가 났다면, 119 구조대를 이용하세요.<br>
+        • 119는 가까운 병원으로 바로 이송해줘요.
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- STEP2 팝업 스크립트 -->
+<script>
+  function showStep2Tip() {
+    var myModal = new bootstrap.Modal(document.getElementById('step2TipModal'));
+    myModal.show();
+  }
+</script>
 
   <!-- STEP 3 -->
   <div id="step3" class="step-content d-none text-center">
