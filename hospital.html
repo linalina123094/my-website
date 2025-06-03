@@ -431,27 +431,103 @@
   }
 </script>
 
-  <!-- STEP 4 -->
-  <div id="step4" class="step-content d-none text-center">
-    <h4 class="mb-4">병원 다녀온 후 해야 할 일</h4>
-    <div class="container d-flex flex-column align-items-center">
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
+<!-- STEP 4 -->
+<div id="step4" class="step-content d-none text-center">
+  <h4 class="mb-4">병원 다녀온 후 해야 할 일</h4>
+  <div class="container d-flex flex-column align-items-center">
+
+    <!-- ① 약 복용 방법 확인하기 + 돋보기 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
           <input class="form-check-input step4" type="checkbox" id="s4_1">
           <label class="form-check-label" for="s4_1">약 복용 방법 확인하기</label>
         </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showMedicineTip()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
+    </div>
+
+    <!-- ② 유학생 단체보험 환급 신청하기 + 돋보기 + 꿀팁 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
           <input class="form-check-input step4" type="checkbox" id="s4_2">
-          <label class="form-check-label" for="s4_2">유학생 단체보험 환급 신청하기</label>
+          <label class="form-check-label ms-2" for="s4_2">유학생 단체보험 환급 신청하기</label>
+          <img src="assets/images/magnifier-icon.png" onclick="showRefundTip()" 
+               style="width: 40px; height: 40px; margin-left: 10px; cursor: pointer;">
+          <img src="assets/images/honey-icon.png" onclick="showRefundTipHoney()" 
+               style="width: 40px; height: 40px; margin-left: 10px; cursor: pointer;">
         </div>
       </div>
-      <button class="reset-btn" onclick="resetStep(4)">초기화</button>
+    </div>
+
+    <button class="reset-btn" onclick="resetStep(4)">초기화</button>
+  </div>
+</div>
+
+<!-- STEP 4 팝업: 약 복용 방법 -->
+<div class="modal fade" id="medicineTipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 400px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>약국에서는 복약 안내서를 함께 줘요. 모르는 약 성분이 있으면 약사에게 꼭 질문해보세요.</p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
     </div>
   </div>
-
 </div>
+
+<!-- STEP 4 팝업: 유학생 단체보험 환급 신청하기 (돋보기) -->
+<div class="modal fade" id="refundTipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 450px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>
+        • 치료비 신청 방법: 온라인 신청 또는 방문 신청<br>
+        • 방문 신청은 매월 둘째 주 수요일, 10:00 ~ 16:00<br>
+        • 장소: 글로벌센터 유학생 라운지<br>
+        ※ 변동 시 K*Talk 공지 확인<br>
+        • 제출 서류: 진료기록지, 진료비 영수증, 신분증, 본인 명의 한국 통장 사본<br>
+        • 문의: ☎ 02-910-5808 (국민대 외국인유학생지원센터)
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4 팝업: 유학생 단체보험 환급 신청하기 (꿀팁) -->
+<div class="modal fade" id="refundTipHoneyModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 450px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>
+        ✅ 환급은 빨리 신청할수록 좋아요!<br><br>
+        → 진료일로부터 일정 기간이 지나면 환급이 불가능할 수 있어요.<br>
+        → 병원 서류는 진료 당일에 요청하면 가장 정확하게 받을 수 있어요.
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4 팝업 호출 스크립트 -->
+<script>
+  function showMedicineTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('medicineTipModal'));
+    myModal.show();
+  }
+  function showRefundTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('refundTipModal'));
+    myModal.show();
+  }
+  function showRefundTipHoney() {
+    var myModal = new bootstrap.Modal(document.getElementById('refundTipHoneyModal'));
+    myModal.show();
+  }
+</script>
 
 <footer class="mt-5">
   <div class="container text-center">
