@@ -27,16 +27,21 @@
       font-weight: 700;
     }
     .option-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 30px;
+      background-color: #2ecc71;
+      border: none;
+      border-radius: 12px;
+      padding: 40px 20px;
+      color: white;
       text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: 0.3s;
       cursor: pointer;
     }
     .option-card:hover {
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #27ae60;
+      transform: translateY(-5px);
     }
   </style>
 
@@ -80,13 +85,13 @@
   <section class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-4 mb-4">
-        <div class="option-card" onclick="location.href='#'">
-          <h4>병원 이용하기</h4>
+        <div class="option-card" onclick="location.href='hospital.html'">
+          병원 이용하기
         </div>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="option-card" onclick="location.href='#'">
-          <h4>계좌 개설하기</h4>
+        <div class="option-card" onclick="location.href='bank.html'">
+          계좌 개설하기
         </div>
       </div>
     </div>
