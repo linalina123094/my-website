@@ -39,6 +39,7 @@
 
 <body>
 
+<!-- Header -->
 <header class="header-area header-sticky">
   <div class="container">
     <div class="row"><div class="col-12">
@@ -49,41 +50,26 @@
           <li><a href="index.html#features">체크리스트</a></li>
           <li><a href="index.html#about">About Us</a></li>
           <li><a href="index.html#services">기능</a></li>
-                      <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
-                <div class="main-blue-button" style="margin: 0; position: relative;">
-                  <select id="language-select" style="
-                    border: none; 
-                    border-radius: 6px; 
-                    background-color: rgba(255,255,255,0.95); 
-                    color: #333; 
-                    padding: 10px 40px 10px 15px; 
-                    font-size: 16px;
-                    line-height: 1.2;
-                    appearance: none;
-                    min-width: 150px;
-                    box-shadow: 0 0 5px rgba(0,0,0,0.15);">
-                    <option value="ko">한국어</option>
-                    <option value="en">English</option>
-                    <option value="mn">Монгол</option>
-                    <option value="zh">中文</option>
-                    <option value="vi">Tiếng Việt</option>
-                  </select>
-                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
-                </div>
-              </li>
-            </ul>
-            <a class='menu-trigger'><span>Menu</span></a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+          <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
+            <div class="main-blue-button" style="margin: 0; position: relative;">
+              <select id="language-select" style="border: none; border-radius: 6px; background-color: rgba(255,255,255,0.95); color: #333; padding: 10px 40px 10px 15px; font-size: 16px; line-height: 1.2; appearance: none; min-width: 150px; box-shadow: 0 0 5px rgba(0,0,0,0.15);">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+                <option value="mn">Монгол</option>
+                <option value="zh">中文</option>
+                <option value="vi">Tiếng Việt</option>
+              </select>
+              <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
+            </div>
+          </li>
         </ul>
+        <a class='menu-trigger'><span>Menu</span></a>
       </nav>
     </div></div>
   </div>
 </header>
 
+<!-- 메인배너 -->
 <div class="main-banner wow fadeIn" id="top">
   <div class="container text-center">
     <h2>🏥 병원 이용하기</h2>
@@ -91,6 +77,7 @@
   </div>
 </div>
 
+<!-- 스텝 버튼 -->
 <div class="container text-center my-4">
   <button class="step-btn active" onclick="showStep(1)">Step 1</button>
   <button class="step-btn" onclick="showStep(2)">Step 2</button>
@@ -122,6 +109,7 @@
   <div id="step2" class="step-content d-none text-center">
     <h4 class="mb-4">병원 선택하기</h4>
     <div class="container d-flex flex-column align-items-center">
+      <!-- 체크리스트 카드 반복 -->
       <div class="card shadow-sm mb-3 p-3 check-card">
         <div class="form-check text-start">
           <input class="form-check-input step2" type="checkbox" id="s2_1">
@@ -211,12 +199,14 @@
 </footer>
 
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <script>
   function showStep(step) {
     document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
     document.getElementById('step' + step).classList.remove('d-none');
     document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.step-btn')[step-1].classList.add('active');
+    localStorage.setItem("currentStep", step);
   }
 
   function resetStep(step) {
@@ -243,6 +233,12 @@
 
   window.onload = function() {
     loadCheckboxState();
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      showStep(parseInt(savedStep));
+    } else {
+      showStep(1);
+    }
   }
 </script>
 
