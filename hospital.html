@@ -194,36 +194,55 @@
   </h4>
 
   <div class="container d-flex flex-column align-items-center">
-    <!-- 체크리스트 카드 반복 -->
+
+    <!-- 1. 증상에 맞는 진료과 확인하기 (돋보기 없음) -->
     <div class="card shadow-sm mb-3 p-3 check-card">
       <div class="form-check text-start">
         <input class="form-check-input step2" type="checkbox" id="s2_1">
         <label class="form-check-label" for="s2_1">증상에 맞는 진료과 확인하기</label>
       </div>
     </div>
+
+    <!-- 2. 가까운 병원 위치 확인하기 -->
     <div class="card shadow-sm mb-3 p-3 check-card">
-      <div class="form-check text-start">
-        <input class="form-check-input step2" type="checkbox" id="s2_2">
-        <label class="form-check-label" for="s2_2">가까운 병원 위치 확인하기</label>
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
+          <input class="form-check-input step2" type="checkbox" id="s2_2">
+          <label class="form-check-label" for="s2_2">가까운 병원 위치 확인하기</label>
+        </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showNearbyHospital()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
     </div>
+
+    <!-- 3. 예약 필요 여부 확인하기 -->
     <div class="card shadow-sm mb-3 p-3 check-card">
-      <div class="form-check text-start">
-        <input class="form-check-input step2" type="checkbox" id="s2_3">
-        <label class="form-check-label" for="s2_3">예약 여부 확인하기</label>
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
+          <input class="form-check-input step2" type="checkbox" id="s2_3">
+          <label class="form-check-label" for="s2_3">예약 필요 여부 확인하기</label>
+        </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showReservation()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
     </div>
+
+    <!-- 4. 외국인 진료 가능 병원 선택하기 -->
     <div class="card shadow-sm mb-3 p-3 check-card">
-      <div class="form-check text-start">
-        <input class="form-check-input step2" type="checkbox" id="s2_4">
-        <label class="form-check-label" for="s2_4">외국인 진료 가능 병원 선택하기</label>
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
+          <input class="form-check-input step2" type="checkbox" id="s2_4">
+          <label class="form-check-label" for="s2_4">외국인 진료 가능 병원 선택하기</label>
+        </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showForeignerClinic()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
     </div>
+
     <button class="reset-btn" onclick="resetStep(2)">초기화</button>
   </div>
 </div>
-
-<!-- STEP2 꿀팁 팝업 -->
+  <!-- STEP2 꿀팁 팝업 -->
 <div class="modal fade" id="step2TipModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" style="top: 300px;">
     <div class="modal-content" style="width: 500px; margin:auto; border-radius: 20px; padding: 20px 30px;">
@@ -246,13 +265,66 @@
   </div>
 </div>
 
-<!-- STEP2 팝업 스크립트 -->
-<script>
+<!-- STEP2 돋보기 팝업들 -->
+
+<!-- ① 가까운 병원 위치 -->
+<div class="modal fade" id="nearbyHospitalModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 450px; margin:auto; border-radius: 20px; padding: 25px;">
+      <p>
+        “네이버 지도”나 “카카오맵” 어플을 활용하여 ‘내과’, ‘병원’ 등의 키워드로 검색하면 현재 위치 기준으로 가까운 병원을 쉽게 찾을 수 있어요.
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ② 예약 필요 여부 -->
+<div class="modal fade" id="reservationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 450px; margin:auto; border-radius: 20px; padding: 25px;">
+      <p>
+        굿닥(Goodoc), 똑닥(DDocDoc) 앱을 이용하면 병원을 검색하고 바로 진료 예약까지 할 수 있어요. 일부 병원은 예약 없이 방문도 가능하니 미리 확인해보세요.
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ③ 외국인 진료 가능 -->
+<div class="modal fade" id="foreignerClinicModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 450px; margin:auto; border-radius: 20px; padding: 25px;">
+      <p>
+        일부 병원은 영어, 중국어 등 통역 지원이 가능하고 외국인 건강보험 처리에도 익숙한 곳이 있어요. 병원 홈페이지나 리뷰, 또는 직접 전화해서 외국인 진료가 가능한지 미리 확인해보세요.
+      </p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
   function showStep2Tip() {
-    var myModal = new bootstrap.Modal(document.getElementById('step2TipModal'));
-    myModal.show();
-  }
-</script>
+  var myModal = new bootstrap.Modal(document.getElementById('step2TipModal'));
+  myModal.show();
+}
+function showNearbyHospital() {
+  var myModal = new bootstrap.Modal(document.getElementById('nearbyHospitalModal'));
+  myModal.show();
+}
+function showReservation() {
+  var myModal = new bootstrap.Modal(document.getElementById('reservationModal'));
+  myModal.show();
+}
+function showForeignerClinic() {
+  var myModal = new bootstrap.Modal(document.getElementById('foreignerClinicModal'));
+  myModal.show();
+}
+   
 
   <!-- STEP 3 -->
   <div id="step3" class="step-content d-none text-center">
