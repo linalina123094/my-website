@@ -88,15 +88,13 @@
 <div class="container my-4">
 
 <!-- Step 1 -->
-<div id="step1" class="step-content text-center position-relative">
-  <h4 class="mb-4 d-inline-block">보험 확인하기</h4>
-  <!-- 꿀팁 아이콘 -->
-  <img src="assets/images/honeytip-icon.png" 
-       alt="꿀팁" 
-       style="width: 50px; height: 50px; margin-left: 10px; cursor: pointer; vertical-align: middle;"
-       onclick="showTipModal()">
+<div id="step1" class="step-content text-center">
+  <h4 class="mb-4">
+    보험 확인하기 
+    <img src="assets/images/honey-icon.png" style="width:35px; cursor:pointer;" onclick="showTip()">
+  </h4>
 
-  <div class="row justify-content-center mt-4">
+  <div class="row justify-content-center">
     <div class="col-lg-4 mb-4">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -109,60 +107,28 @@
       </div>
     </div>
   </div>
+</div>
 
-  <!-- 꿀팁 팝업 -->
-  <div id="tipModal" class="position-absolute top-50 start-50 translate-middle d-none" 
-       style="z-index: 9999; background: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); max-width: 400px;">
-    <h5 style="font-weight:700; font-size: 22px;">의료보험 혜택을 최대한 누리는 방법</h5>
-    <p class="mt-3 text-start">
-      아프면 병원에 가요 →<br>
-      국민건강보험으로 병원비 할인 →<br>
-      국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
-    </p>
-    <button class="btn btn-success mt-3" onclick="hideTipModal()">확인</button>
+<!-- 꿀팁 팝업 -->
+<div class="modal fade" id="tipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-4 text-center">
+      <h5 style="font-weight:bold; font-size: 22px;">의료보험 혜택을 최대한 누리는 방법</h5>
+      <div class="mt-3 mb-3" style="font-size:16px;">
+        아프면 병원에 가요 →<br>
+        국민건강보험으로 병원비 할인 →<br>
+        국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
+      </div>
+      <button class="btn" style="background-color:#34ccc8; color:white;" data-bs-dismiss="modal">확인</button>
+    </div>
   </div>
 </div>
 
+<!-- 팝업 실행 스크립트 -->
 <script>
-  function showTipModal() {
-    document.getElementById('tipModal').classList.remove('d-none');
-  }
-  function hideTipModal() {
-    document.getElementById('tipModal').classList.add('d-none');
-  }
-</script>
-
-<!-- 팝업 (TIPS 제목 제거된 버전) -->
-<div id="tipModal" style="
-  display:none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1050;
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-">
-  <p style="font-weight:600;">의료보험 혜택을 최대한 누리는 방법</p>
-  <p style="font-size:15px; margin-top:10px;">
-    아프면 병원에 가요 →<br>
-    국민건강보험으로 병원비 할인 →<br>
-    국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
-  </p>
-  <button onclick="closeTipPopup()" style="margin-top: 15px; padding: 8px 20px; background-color: #34ccc8; border: none; color: white; border-radius: 5px;">확인</button>
-</div>
-
-<script>
-  function showTipPopup() {
-    document.getElementById("tipModal").style.display = "block";
-  }
-  function closeTipPopup() {
-    document.getElementById("tipModal").style.display = "none";
+  function showTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('tipModal'));
+    myModal.show();
   }
 </script>
   <!-- STEP 2 -->
