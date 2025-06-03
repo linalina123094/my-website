@@ -42,9 +42,7 @@
       background-color: #34ccc8;
       color: white;
     }
-    .check-card {
-      width: 400px;
-    }
+    .check-card { width: 400px; }
   </style>
 </head>
 
@@ -125,61 +123,68 @@
     <div id="step2" class="step-content d-none text-center">
       <h4 class="mb-4">병원 선택하기</h4>
       <div class="container d-flex flex-column align-items-center">
+
+        <!-- 카드형 체크리스트 (자동저장) -->
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check1">
+            <input class="form-check-input checklist" type="checkbox" id="check1">
             <label class="form-check-label" for="check1">증상에 맞는 진료과 확인하기</label>
           </div>
         </div>
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check2">
-            <label class="form-check-label" for="check2">가까운 병원 위치 확인하기기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check2">
+            <label class="form-check-label" for="check2">가까운 병원 위치 확인하기</label>
           </div>
         </div>
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check3">
+            <input class="form-check-input checklist" type="checkbox" id="check3">
             <label class="form-check-label" for="check3">예약 여부 확인하기</label>
           </div>
         </div>
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check1">
-            <label class="form-check-label" for="check1">외국인 진료 가능 병원 선택하기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check4">
+            <label class="form-check-label" for="check4">외국인 진료 가능 병원 선택하기</label>
           </div>
         </div>
+
+        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
       </div>
     </div>
 
     <!-- Step 3 -->
     <div id="step3" class="step-content d-none text-center">
-      <h4 class="mb-4">진료 받기</h4>
+      <h4 class="mb-4">진료받기</h4>
       <div class="container d-flex flex-column align-items-center">
+
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check4">
-            <label class="form-check-label" for="check4">여권 또는 외국인등록증 챙기기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check5">
+            <label class="form-check-label" for="check5">여권 또는 외국인등록증 지참하기</label>
           </div>
         </div>
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check5">
-            <label class="form-check-label" for="check5">증상 설명 준비하기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check6">
+            <label class="form-check-label" for="check6">증상 설명 준비하기</label>
           </div>
         </div>
-          <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check4">
-            <label class="form-check-label" for="check4">진료 후 결제하기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check7">
+            <label class="form-check-label" for="check7">진료 후 결제하기</label>
           </div>
         </div>
-          <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check4">
-            <label class="form-check-label" for="check4">약 처방전 받기 & 약국 가기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check8">
+            <label class="form-check-label" for="check8">약 처방전 받기 & 약국 가기</label>
           </div>
         </div>
+
+        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
       </div>
     </div>
 
@@ -187,18 +192,21 @@
     <div id="step4" class="step-content d-none text-center">
       <h4 class="mb-4">병원 다녀온 후 해야 할 일</h4>
       <div class="container d-flex flex-column align-items-center">
+
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check6">
-            <label class="form-check-label" for="check6">약 복용 방법 확인하기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check9">
+            <label class="form-check-label" for="check9">약 복용 방법 확인하기</label>
           </div>
         </div>
         <div class="card shadow-sm mb-3 p-3 check-card">
           <div class="form-check text-start">
-            <input class="form-check-input" type="checkbox" id="check7">
-            <label class="form-check-label" for="check7">유학생 단체보험 환급 신청하기</label>
+            <input class="form-check-input checklist" type="checkbox" id="check10">
+            <label class="form-check-label" for="check10">유학생 단체보험 환급 신청하기</label>
           </div>
         </div>
+
+        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
       </div>
     </div>
 
@@ -217,6 +225,20 @@
       document.querySelector('#step' + step).classList.remove('d-none');
       document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.step-btn')[step - 1].classList.add('active');
+    }
+
+    // 자동저장
+    const checkboxes = document.querySelectorAll('.checklist');
+    checkboxes.forEach(cb => {
+      cb.checked = localStorage.getItem(cb.id) === 'true';
+      cb.addEventListener('change', () => localStorage.setItem(cb.id, cb.checked));
+    });
+
+    function resetChecklist() {
+      checkboxes.forEach(cb => {
+        cb.checked = false;
+        localStorage.removeItem(cb.id);
+      });
     }
   </script>
 
