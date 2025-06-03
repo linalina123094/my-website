@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <title>병원 이용하기 - CheckMate</title>
+
+  <!-- 템플릿 기반 CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
   <style>
     body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
+
     input[type="checkbox"] {
       accent-color: #34ccc8;
       width: 20px;
       height: 20px;
     }
+
     .step-btn {
       margin: 5px;
       padding: 10px 20px;
@@ -22,20 +31,24 @@
       color: #34ccc8;
       transition: 0.3s;
     }
+
     .step-btn:hover {
       background-color: #2bbcb9;
       color: white;
     }
+
     .step-btn.active {
       background-color: #34ccc8;
       color: white;
     }
+
     .tip-icon, .magnifier-icon { 
       width: 32px; 
       vertical-align: middle; 
       margin-left: 5px; 
       cursor: pointer; 
     }
+
     .checklist-item {
       padding: 10px; 
       border: 1px solid #ddd; 
@@ -44,13 +57,14 @@
       display: flex; 
       align-items: center;
     }
+
     .checklist-item input { margin-right: 10px; }
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- Header 통일 -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
       <div class="row">
@@ -65,13 +79,14 @@
               <li><a href="index.html#about">About Us</a></li>
               <li><a href="index.html#services">기능</a></li>
             </ul>
+            <a class='menu-trigger'><span>Menu</span></a>
           </nav>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- 통일된 메인배너 -->
+  <!-- 통일된 메인배너 적용 -->
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <img src="assets/images/banner-dec-left.png" class="left-dec">
     <img src="assets/images/banner-dec-right.png" class="right-dec">
@@ -87,12 +102,10 @@
 
   <!-- 스텝 버튼 -->
   <div class="container text-center my-4">
-    <div>
-      <button class="step-btn active" onclick="showStep(1)">Step 1</button>
-      <button class="step-btn" onclick="showStep(2)">Step 2</button>
-      <button class="step-btn" onclick="showStep(3)">Step 3</button>
-      <button class="step-btn" onclick="showStep(4)">Step 4</button>
-    </div>
+    <button class="step-btn active" onclick="showStep(1)">Step 1</button>
+    <button class="step-btn" onclick="showStep(2)">Step 2</button>
+    <button class="step-btn" onclick="showStep(3)">Step 3</button>
+    <button class="step-btn" onclick="showStep(4)">Step 4</button>
   </div>
 
   <!-- 스텝별 내용 -->
@@ -102,7 +115,6 @@
       <h4>보험 확인하기 
         <img src="assets/images/tip-icon-optimized.png" class="tip-icon" onclick="showModal('tip1')">
       </h4>
-
       <div class="border rounded p-3 mb-3">
         <strong>국민건강보험 (의무 가입)</strong>
         <ul>
@@ -134,7 +146,6 @@
       <h4>병원 선택하기 
         <img src="assets/images/magnifier-icon-optimized.png" class="magnifier-icon" onclick="showModal('magnifier2')">
       </h4>
-
       <div class="checklist-item">
         <input type="checkbox"> 외국인 진료 가능한 병원 찾기
       </div>
@@ -149,7 +160,6 @@
     <!-- Step 3 -->
     <div id="step3" class="step-content d-none">
       <h4>진료받기</h4>
-
       <div class="checklist-item">
         <input type="checkbox"> 여권, 외국인등록증 지참하기
       </div>
@@ -161,7 +171,6 @@
     <!-- Step 4 -->
     <div id="step4" class="step-content d-none">
       <h4>보험금 청구하기</h4>
-
       <div class="checklist-item">
         <input type="checkbox"> 병원비 납부 영수증 준비
       </div>
@@ -185,14 +194,22 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer 통일 -->
   <footer class="mt-5">
     <div class="container text-center">
       <p>Copyright © 2025 CheckMate. All Rights Reserved.</p>
     </div>
   </footer>
 
+  <!-- 스크립트 통일 -->
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <!-- 스텝 전환 및 팝업 -->
   <script>
     function showStep(step) {
       document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
