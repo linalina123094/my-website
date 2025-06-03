@@ -7,10 +7,48 @@
   <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
   <style>
     body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
-    .step-btn { margin: 5px; padding: 10px 20px; font-weight: 600; border-radius: 8px; border: none; }
-    .step-btn.active { background-color: #2ecc71; color: white; }
-    .tip-icon, .magnifier-icon { width: 24px; vertical-align: middle; margin-right: 5px; cursor: pointer; }
-    .checklist-item { padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; }
+
+    /* 체크박스 색상 통일 */
+    input[type="checkbox"] {
+      accent-color: #1abc9c;
+      width: 20px;
+      height: 20px;
+    }
+
+    .step-btn {
+      margin: 5px;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      background-color: #ecf9f8;
+      color: #1abc9c;
+      transition: 0.3s;
+    }
+    .step-btn:hover {
+      background-color: #16a085;
+      color: white;
+    }
+    .step-btn.active {
+      background-color: #1abc9c;
+      color: white;
+    }
+
+    .tip-icon, .magnifier-icon { 
+      width: 24px; 
+      vertical-align: middle; 
+      margin-left: 5px; 
+      cursor: pointer; 
+    }
+
+    .checklist-item {
+      padding: 10px; 
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+      margin-bottom: 10px; 
+      display: flex; 
+      align-items: center;
+    }
     .checklist-item input { margin-right: 10px; }
   </style>
 </head>
@@ -38,12 +76,16 @@
     </div>
   </header>
 
-  <!-- 제목 -->
-  <div class="container text-center mt-5">
-    <h2>병원 이용하기</h2>
-    <p class="mb-4">유학생을 위한 병원 이용 단계별 가이드</p>
+  <!-- 메인배너 -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="min-height: 300px;">
+    <div class="container text-center">
+      <h2 class="mt-5">병원 이용하기</h2>
+      <p class="mt-3">유학생을 위한 병원 이용 단계별 가이드</p>
+    </div>
+  </div>
 
-    <!-- 스텝 버튼 -->
+  <!-- 스텝 버튼 -->
+  <div class="container text-center my-4">
     <div>
       <button class="step-btn active" onclick="showStep(1)">Step 1</button>
       <button class="step-btn" onclick="showStep(2)">Step 2</button>
