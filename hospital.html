@@ -324,37 +324,112 @@
   }
 </script>
 
-  <!-- STEP 3 -->
-  <div id="step3" class="step-content d-none text-center">
-    <h4 class="mb-4">진료 받기</h4>
-    <div class="container d-flex flex-column align-items-center">
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
-          <input class="form-check-input step3" type="checkbox" id="s3_1">
-          <label class="form-check-label" for="s3_1">여권 또는 외국인등록증 지참</label>
-        </div>
+ <!-- STEP 3 -->
+<div id="step3" class="step-content d-none text-center">
+  <h4 class="mb-4">진료 받기</h4>
+  <div class="container d-flex flex-column align-items-center">
+
+    <!-- ① 외국인등록증 또는 여권 챙기기 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start">
+        <input class="form-check-input step3" type="checkbox" id="s3_1">
+        <label class="form-check-label" for="s3_1">외국인등록증 또는 여권 챙기기</label>
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
+    </div>
+
+    <!-- ② 증상 설명 준비하기 + 돋보기 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
           <input class="form-check-input step3" type="checkbox" id="s3_2">
           <label class="form-check-label" for="s3_2">증상 설명 준비하기</label>
         </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showSymptomTip()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
+    </div>
+
+    <!-- ③ 진료 후 결제하기 + 돋보기 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
           <input class="form-check-input step3" type="checkbox" id="s3_3">
           <label class="form-check-label" for="s3_3">진료 후 결제하기</label>
         </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showPaymentTip()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
-      <div class="card shadow-sm mb-3 p-3 check-card">
-        <div class="form-check text-start">
+    </div>
+
+    <!-- ④ 약 처방전 받기 & 약국 가기 + 돋보기 -->
+    <div class="card shadow-sm mb-3 p-3 check-card">
+      <div class="form-check text-start d-flex justify-content-between align-items-center">
+        <div>
           <input class="form-check-input step3" type="checkbox" id="s3_4">
           <label class="form-check-label" for="s3_4">약 처방전 받기 & 약국 가기</label>
         </div>
+        <img src="assets/images/magnifier-icon.png" onclick="showPharmacyTip()" 
+             style="width: 40px; height: 40px; cursor: pointer;">
       </div>
-      <button class="reset-btn" onclick="resetStep(3)">초기화</button>
+    </div>
+
+    <button class="reset-btn" onclick="resetStep(3)">초기화</button>
+  </div>
+</div>
+
+<!-- STEP 3 돋보기 팝업들 -->
+
+<!-- 증상 설명 준비하기 팝업 -->
+<div class="modal fade" id="symptomTipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 400px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>간단한 증상과 아픈 부위를 정리해두고, 영어·한국어 둘 다 메모해 가면 좋아요. 구글번역기, 파파고와 같은 번역 앱이나 통역 메모를 준비해요.</p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- 진료 후 결제하기 팝업 -->
+<div class="modal fade" id="paymentTipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 400px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>국민건강보험이 등록되어 있으면 자동으로 병원에서 할인돼요. 유학생 단체보험 환급용 서류가 필요할 경우엔 진료 후에 진료비 영수증과 진료기록지 꼭 받아두세요.</p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 약국 가기 팝업 -->
+<div class="modal fade" id="pharmacyTipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="top: 300px;">
+    <div class="modal-content" style="width: 400px; margin:auto; border-radius: 20px; padding: 30px;">
+      <p>병원에서 받은 처방전만 있으면 병원 근처 약국에서 바로 약을 받을 수 있어요. 약국 위치는 병원에 물어보거나, 지도 앱으로 검색하면 돼요.</p>
+      <div class="text-center">
+        <button class="btn" style="background-color: #34ccc8; color: white; border:none;" data-bs-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3 팝업 호출 스크립트 -->
+<script>
+  function showSymptomTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('symptomTipModal'));
+    myModal.show();
+  }
+  function showPaymentTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('paymentTipModal'));
+    myModal.show();
+  }
+  function showPharmacyTip() {
+    var myModal = new bootstrap.Modal(document.getElementById('pharmacyTipModal'));
+    myModal.show();
+  }
+</script>
 
   <!-- STEP 4 -->
   <div id="step4" class="step-content d-none text-center">
