@@ -72,18 +72,10 @@
     </div>
   </header>
 
-  <!-- 완전히 동일한 메인배너 통일 적용 -->
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <img src="assets/images/banner-dec-left.png" class="left-dec">
-    <img src="assets/images/banner-dec-right.png" class="right-dec">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2>🏥 병원 이용하기</h2>
-          <p>보험 확인부터 진료, 보험금 청구까지 단계별로 안내합니다.</p>
-        </div>
-      </div>
-    </div>
+  <!-- 병원 이용하기 타이틀 영역 -->
+  <div class="container text-center my-5">
+    <h2>🏥 병원 이용하기</h2>
+    <p>보험 확인부터 진료, 보험금 청구까지 단계별로 안내합니다.</p>
   </div>
 
   <!-- 스텝 버튼 -->
@@ -109,6 +101,7 @@
         <ul>
           <li>외국인 유학생은 자동 가입 (매달 보험료 납부)</li>
           <li>납부 마감일: 매달 25일까지</li>
+          <li>우편 고지서 또는 국민건강보험 앱에서 확인인/li>
           <li>납부 방법: 앱 / 은행 / 카드결제</li>
         </ul>
       </div>
@@ -210,7 +203,7 @@
       }
       if (type === 'magnifier2') {
         document.getElementById('popupTitle').innerText = "돋보기: 외국인 진료 병원 찾기";
-        document.getElementById('popupContent').innerText = "일부 병원은 외국어 진료, 국제클리닉을 운영합니다. 가능 여부를 사전에 문의하세요.";
+        document.getElementById('popupContent').innerText = "일부 병원은 영어, 중국어 등 통역 지원이 가능하고 외국인 건강보험 처리에도 익숙한 곳이 있어요. 병원 홈페이지나 리뷰, 또는 직접 전화해서 외국인 진료가 가능한지 미리 확인해보세요.";
       }
       modal.show();
     }
