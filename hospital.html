@@ -34,14 +34,8 @@
       color: #34ccc8;
       transition: 0.3s;
     }
-    .step-btn:hover {
-      background-color: #2bbcb9;
-      color: white;
-    }
-    .step-btn.active {
-      background-color: #34ccc8;
-      color: white;
-    }
+    .step-btn:hover { background-color: #2bbcb9; color: white; }
+    .step-btn.active { background-color: #34ccc8; color: white; }
     .check-card { width: 400px; }
   </style>
 </head>
@@ -54,9 +48,7 @@
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
-            <a href="index.html" class="logo">
-              <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
-            </a>
+            <a href="index.html" class="logo"><h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4></a>
             <ul class="nav">
               <li><a href="index.html">Home</a></li>
               <li><a href="index.html#features">체크리스트</a></li>
@@ -64,14 +56,14 @@
               <li><a href="index.html#services">기능</a></li>
               <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
                 <div class="main-blue-button" style="margin: 0; position: relative;">
-                  <select id="language-select" style="border: none; border-radius: 6px; background-color: rgba(255,255,255,0.95); color: #333; padding: 10px 40px 10px 15px; font-size: 16px; line-height: 1.2; appearance: none; min-width: 150px; box-shadow: 0 0 5px rgba(0,0,0,0.15);">
+                  <select id="language-select" style="border: none; border-radius: 6px; background-color: rgba(255,255,255,0.95); color: #333; padding: 10px 40px 10px 15px; font-size: 16px; appearance: none; min-width: 150px; box-shadow: 0 0 5px rgba(0,0,0,0.15);">
                     <option value="ko">한국어</option>
                     <option value="en">English</option>
                     <option value="mn">Монгол</option>
                     <option value="zh">中文</option>
                     <option value="vi">Tiếng Việt</option>
                   </select>
-                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
+                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #333;">▼</span>
                 </div>
               </li>
             </ul>
@@ -100,7 +92,6 @@
 
   <!-- 스텝별 내용 -->
   <div class="container my-4">
-
     <!-- Step 1 -->
     <div id="step1" class="step-content text-center">
       <h4 class="mb-4">보험 확인하기</h4>
@@ -123,93 +114,35 @@
     <div id="step2" class="step-content d-none text-center">
       <h4 class="mb-4">병원 선택하기</h4>
       <div class="container d-flex flex-column align-items-center">
-
-        <!-- 카드형 체크리스트 (자동저장) -->
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check1">
-            <label class="form-check-label" for="check1">증상에 맞는 진료과 확인하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check2">
-            <label class="form-check-label" for="check2">가까운 병원 위치 확인하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check3">
-            <label class="form-check-label" for="check3">예약 여부 확인하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check4">
-            <label class="form-check-label" for="check4">외국인 진료 가능 병원 선택하기</label>
-          </div>
-        </div>
-
-        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step2" type="checkbox" id="step2-check1"> 증상에 맞는 진료과 확인하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step2" type="checkbox" id="step2-check2"> 가까운 병원 위치 확인하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step2" type="checkbox" id="step2-check3"> 예약 여부 확인하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step2" type="checkbox" id="step2-check4"> 외국인 진료 가능 병원 선택하기</div>
       </div>
+      <button onclick="resetStep(2)" class="btn btn-sm btn-outline-secondary mt-3">Step 2 초기화</button>
     </div>
 
     <!-- Step 3 -->
     <div id="step3" class="step-content d-none text-center">
-      <h4 class="mb-4">진료받기</h4>
+      <h4 class="mb-4">진료 받기</h4>
       <div class="container d-flex flex-column align-items-center">
-
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check5">
-            <label class="form-check-label" for="check5">여권 또는 외국인등록증 지참하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check6">
-            <label class="form-check-label" for="check6">증상 설명 준비하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check7">
-            <label class="form-check-label" for="check7">진료 후 결제하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check8">
-            <label class="form-check-label" for="check8">약 처방전 받기 & 약국 가기</label>
-          </div>
-        </div>
-
-        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step3" type="checkbox" id="step3-check1"> 여권 또는 외국인등록증 챙기기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step3" type="checkbox" id="step3-check2"> 증상 설명 준비하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step3" type="checkbox" id="step3-check3"> 진료 후 결제하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step3" type="checkbox" id="step3-check4"> 약 처방전 받기 & 약국 가기</div>
       </div>
+      <button onclick="resetStep(3)" class="btn btn-sm btn-outline-secondary mt-3">Step 3 초기화</button>
     </div>
 
     <!-- Step 4 -->
     <div id="step4" class="step-content d-none text-center">
       <h4 class="mb-4">병원 다녀온 후 해야 할 일</h4>
       <div class="container d-flex flex-column align-items-center">
-
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check9">
-            <label class="form-check-label" for="check9">약 복용 방법 확인하기</label>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3 p-3 check-card">
-          <div class="form-check text-start">
-            <input class="form-check-input checklist" type="checkbox" id="check10">
-            <label class="form-check-label" for="check10">유학생 단체보험 환급 신청하기</label>
-          </div>
-        </div>
-
-        <button class="btn btn-danger mt-3" onclick="resetChecklist()">초기화</button>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step4" type="checkbox" id="step4-check1"> 약 복용 방법 확인하기</div>
+        <div class="card shadow-sm mb-3 p-3 check-card"><input class="form-check-input checklist step4" type="checkbox" id="step4-check2"> 유학생 단체보험 환급 신청하기</div>
       </div>
+      <button onclick="resetStep(4)" class="btn btn-sm btn-outline-secondary mt-3">Step 4 초기화</button>
     </div>
-
   </div>
 
   <footer class="mt-5">
@@ -220,24 +153,31 @@
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
+    // 스텝 전환
     function showStep(step) {
       document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
       document.querySelector('#step' + step).classList.remove('d-none');
       document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.step-btn')[step - 1].classList.add('active');
+      localStorage.setItem("currentStep", step);
     }
 
-    // 자동저장
-    const checkboxes = document.querySelectorAll('.checklist');
-    checkboxes.forEach(cb => {
-      cb.checked = localStorage.getItem(cb.id) === 'true';
-      cb.addEventListener('change', () => localStorage.setItem(cb.id, cb.checked));
+    // 저장 및 복원
+    document.addEventListener('DOMContentLoaded', function () {
+      let lastStep = localStorage.getItem("currentStep") || 1;
+      showStep(lastStep);
+      document.querySelectorAll('input[type="checkbox"]').forEach(el => {
+        let id = el.id;
+        if (localStorage.getItem(id) === "true") el.checked = true;
+        el.addEventListener('change', () => localStorage.setItem(id, el.checked));
+      });
     });
 
-    function resetChecklist() {
-      checkboxes.forEach(cb => {
-        cb.checked = false;
-        localStorage.removeItem(cb.id);
+    // 초기화 기능
+    function resetStep(step) {
+      document.querySelectorAll('.checklist.step' + step).forEach(el => {
+        el.checked = false;
+        localStorage.removeItem(el.id);
       });
     }
   </script>
