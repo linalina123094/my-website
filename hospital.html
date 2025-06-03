@@ -26,17 +26,17 @@
       height: 20px;
     }
 
- .step-btn {
-  margin: 5px;
-  padding: 15px 30px;
-  font-weight: 600;
-  font-size: 18px;
-  border-radius: 8px;
-  border: none;
-  background-color: #ecf9f8;
-  color: #34ccc8;
-  transition: 0.3s;
-}
+    .step-btn {
+      margin: 5px;
+      padding: 15px 30px;
+      font-weight: 600;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      background-color: #ecf9f8;
+      color: #34ccc8;
+      transition: 0.3s;
+    }
 
     .step-btn:hover {
       background-color: #2bbcb9;
@@ -86,7 +86,7 @@
     </div>
   </header>
 
-  <!-- 메인배너 통일 적용 -->
+  <!-- 메인배너 -->
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container text-center">
       <h2>🏥 병원 이용하기</h2>
@@ -104,26 +104,26 @@
 
   <!-- 스텝별 내용 -->
   <div class="container my-4">
-   <!-- Step 1 -->
-<div id="step1" class="step-content text-center">
-  <h4 class="mb-4">보험 확인하기</h4>
 
-  <div class="row justify-content-center">
-
-    <!-- 카드 1: 어떤 보험이 필요한가요 -->
-    <div class="col-lg-4 mb-4">
-      <div class="card shadow-sm h-100">
-        <div class="card-body">
-          <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
-          <ul class="text-start">
-            <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
-            <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
-          </ul>
+    <!-- Step 1: 카드형 정보 제공 -->
+    <div id="step1" class="step-content text-center">
+      <h4 class="mb-4">보험 확인하기</h4>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 mb-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
+              <ul class="text-start">
+                <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
+                <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Step 2 -->
+    <!-- Step 2: 체크리스트 -->
     <div id="step2" class="step-content d-none">
       <h4>병원 선택하기</h4>
       <div class="checklist-item"><input type="checkbox"> 외국인 진료 가능한 병원 찾기</div>
@@ -131,20 +131,21 @@
       <div class="checklist-item"><input type="checkbox"> 진료비 및 보험 적용 여부 확인</div>
     </div>
 
-    <!-- Step 3 -->
+    <!-- Step 3: 체크리스트 -->
     <div id="step3" class="step-content d-none">
       <h4>진료받기</h4>
       <div class="checklist-item"><input type="checkbox"> 여권, 외국인등록증 지참</div>
       <div class="checklist-item"><input type="checkbox"> 진료 후 영수증 수령</div>
     </div>
 
-    <!-- Step 4 -->
+    <!-- Step 4: 체크리스트 -->
     <div id="step4" class="step-content d-none">
       <h4>보험금 청구하기</h4>
       <div class="checklist-item"><input type="checkbox"> 병원비 영수증 준비</div>
       <div class="checklist-item"><input type="checkbox"> 보험금 청구서 제출</div>
       <div class="checklist-item"><input type="checkbox"> 보험금 입금 확인</div>
     </div>
+
   </div>
 
   <!-- Footer -->
@@ -155,7 +156,6 @@
   </footer>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <script>
     function showStep(step) {
       document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
