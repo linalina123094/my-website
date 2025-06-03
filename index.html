@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="CheckMate 유학생 생활 가이드">
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="assets/css/animated.css">
   <link rel="stylesheet" href="assets/css/owl.css">
 
+  <!-- 추가 디자인 최적화 -->
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
@@ -29,119 +31,245 @@
       font-size: 17px;
       font-weight: 600;
     }
+    .main-green-button a {
+      background-color: #2ecc71 !important;
+      border-color: #2ecc71 !important;
+    }
+    .main-blue-button select {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 10px 40px 10px 15px;
+      border-radius: 6px;
+      border: none;
+      min-width: 150px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    }
     h2 {
       font-weight: 700;
     }
   </style>
+
 </head>
 
 <body>
 
   <!-- Header -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- 로고 -->
+          <a href="index.html" class="logo">
+            <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
+          </a>
+          <!-- 메뉴 -->
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+            <li class="scroll-to-section"><a href="#features">체크리스트</a></li>
+            <li class="scroll-to-section"><a href="#about">About Us</a></li>
+            <li class="scroll-to-section"><a href="#services">기능</a></li>
+            <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
+              <div class="main-blue-button" style="margin: 0; position: relative;">
+                <select id="language-select" style="
+                  border: none; 
+                  border-radius: 6px; 
+                  background-color: rgba(255,255,255,0.95); 
+                  color: #333; 
+                  padding: 10px 40px 10px 15px; 
+                  font-size: 16px;
+                  line-height: 1.2;
+                  appearance: none;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  min-width: 150px;
+                  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+                ">
+                  <option value="ko">한국어</option>
+                  <option value="en">English</option>
+                  <option value="mn">Монгол</option>
+                  <option value="zh">中文</option>
+                  <option value="vi">Tiếng Việt</option>
+                </select>
+                <span style="
+                  position: absolute;
+                  right: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  pointer-events: none;
+                  font-size: 12px;
+                  color: #333;
+                ">▼</span>
+              </div>
+            </li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- 메인 배너 -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <a href="index.html" class="logo">
-              <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
-            </a>
-            <ul class="nav">
-              <li><a href="#top" class="active">Home</a></li>
-              <li><a href="#features">체크리스트</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">기능</a></li>
-              <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
-                <div class="main-blue-button" style="margin: 0; position: relative;">
-                  <select id="language-select" style="
-                    border: none; 
-                    border-radius: 6px; 
-                    background-color: rgba(255,255,255,0.95); 
-                    color: #333; 
-                    padding: 10px 40px 10px 15px; 
-                    font-size: 16px;
-                    line-height: 1.2;
-                    appearance: none;
-                    min-width: 150px;
-                    box-shadow: 0 0 5px rgba(0,0,0,0.15);">
-                    <option value="ko">한국어</option>
-                    <option value="en">English</option>
-                    <option value="mn">Монгол</option>
-                    <option value="zh">中文</option>
-                    <option value="vi">Tiếng Việt</option>
-                  </select>
-                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>유학생을 위한 생활 가이드<br>CheckMate</h2>
+                    <p>비자부터 주거까지, 필요한 모든 정보를 한 곳에서 제공합니다.</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="main-green-button scroll-to-section">
+                      <a href="#features">서비스 시작하기</a>
+                    </div>
+                  </div>
                 </div>
-              </li>
-            </ul>
-            <a class='menu-trigger'><span>Menu</span></a>
-          </nav>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/banner-right-image.png" alt="">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+<!-- 체크리스트 -->
+<div id="features" class="features section">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2>체크리스트</h2>
+    </div>
+    <div class="row">
+      <!-- 01 비자 안내 -->
+      <div class="col-lg-3">
+        <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+          <div class="first-number number"><h6>01</h6></div>
+          <div class="icon"></div>
+          <h4><a href="visa.html" class="checklist-link">비자 안내</a></h4>
+          <div class="line-dec"></div>
+          <p>비자 신청 및 연장, 출입국 신고 방법 안내</p>
+        </div>
+      </div>
 
-  <!-- 메인배너 -->
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="container text-center">
-      <h2>유학생을 위한 생활 가이드<br>CheckMate</h2>
-      <p>비자부터 주거까지, 필요한 모든 정보를 한 곳에서 제공합니다.</p>
+      <!-- 02 주거 정보 -->
+      <div class="col-lg-3">
+        <div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="second-number number"><h6>02</h6></div>
+          <div class="icon"></div>
+          <h4><a href="housing.html" class="checklist-link">주거 정보</a></h4>
+          <div class="line-dec"></div>
+          <p>집 계약, 중개수수료, 이사 및 전입신고 절차 안내</p>
+        </div>
+      </div>
+
+      <!-- 03 근로 정보 -->
+      <div class="col-lg-3">
+        <div class="features-item third-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+          <div class="third-number number"><h6>03</h6></div>
+          <div class="icon"></div>
+          <h4><a href="work.html" class="checklist-link">근로 정보</a></h4>
+          <div class="line-dec"></div>
+          <p>아르바이트, 근로허가, 주휴수당 등 유학생 근로 가이드</p>
+        </div>
+      </div>
+
+      <!-- 04 생활 정보 -->
+      <div class="col-lg-3">
+        <div class="features-item fourth-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+          <div class="fourth-number number"><h6>04</h6></div>
+          <div class="icon"></div>
+          <h4><a href="living.html" class="checklist-link">생활 정보</a></h4>
+          <div class="line-dec"></div>
+          <p>병원 이용, 계좌 개설 등 실생활 꿀팁 제공</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- 체크리스트 -->
-  <div id="features" class="features section">
+<!-- 추가 CSS (style 태그 안에 넣어도 되고 css 파일에 추가해도 됨) -->
+<style>
+  .checklist-link {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .checklist-link:hover {
+    color: #fff;
+  }
+</style>
+  <!-- About Us -->
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="section-heading text-center mb-5">
+        <h2>About Us</h2>
+        <p>CheckMate는 한국 생활이 처음인 유학생들을 위해 필요한 모든 생활 정보를 단계별로 안내하는 서비스입니다.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="about-item text-center">
+            <p>비자 신청, 근로허가, 주거 계약, 생활요령 등 유학생이 한국에서 혼자 생활하면서 부딪히는 다양한 상황을 쉽게 이해하고 준비할 수 있도록 돕습니다. 
+            누구나 따라하기 쉬운 체크리스트 형식으로 제공되며, 꿀팁 기능과 다국어 지원으로 불편함을 최소화합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+    <!-- 기능 -->
+  <div id="services" class="our-services section">
     <div class="container">
       <div class="section-heading text-center">
-        <h2>체크리스트</h2>
+        <h2>주요 기능</h2>
+        <p>CheckMate가 제공하는 핵심 기능을 확인하세요.</p>
       </div>
       <div class="row">
 
-        <div class="col-lg-3">
-          <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-            <div class="first-number number"><h6>01</h6></div>
-            <div class="icon"></div>
-            <h4><a href="visa.html">비자 안내</a></h4>
-            <div class="line-dec"></div>
-            <p>비자 신청 및 연장, 출입국 신고 방법 안내</p>
+        <!-- 다국어 지원 -->
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
+            <div class="icon mb-3">
+              <img src="assets/images/service-icon-01.png" alt="">
+            </div>
+            <h4>다국어 지원</h4>
+            <p>한국어, 영어, 몽골어, 중국어, 베트남어까지 다양한 언어로 서비스 제공</p>
           </div>
         </div>
 
-        <div class="col-lg-3">
-          <div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div class="second-number number"><h6>02</h6></div>
-            <div class="icon"></div>
-            <h4><a href="housing.html">주거 정보</a></h4>
-            <div class="line-dec"></div>
-            <p>집 계약, 중개수수료, 이사 및 전입신고 절차 안내</p>
+        <!-- 챗봇 -->
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
+            <div class="icon mb-3">
+              <img src="assets/images/service-icon-02.png" alt="">
+            </div>
+            <h4>챗봇 상담</h4>
+            <p>언제든지 궁금한 점을 챗봇을 통해 빠르고 쉽게 문의 가능</p>
           </div>
         </div>
 
-        <div class="col-lg-3">
-          <div class="features-item third-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-            <div class="third-number number"><h6>03</h6></div>
-            <div class="icon"></div>
-            <h4><a href="work.html">근로 정보</a></h4>
-            <div class="line-dec"></div>
-            <p>아르바이트, 근로허가, 주휴수당 등 유학생 근로 가이드</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="features-item fourth-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="fourth-number number"><h6>04</h6></div>
-            <div class="icon"></div>
-            <h4><a href="living.html">생활 정보</a></h4>
-            <div class="line-dec"></div>
-            <p>병원 이용, 계좌 개설 등 실생활 꿀팁 제공</p>
+        <!-- 돋보기/꿀팁 -->
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s" style="border:1px solid #ddd; padding:30px; border-radius:10px;">
+            <div class="icon mb-3">
+              <img src="assets/images/service-icon-03.png" alt="">
+            </div>
+            <h4>돋보기 꿀팁</h4>
+            <p>한국 생활의 맥락을 쉽게 이해할 수 있도록 상황별 꿀팁과 배경설명 제공</p>
           </div>
         </div>
 
       </div>
     </div>
   </div>
-
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="mt-5">
     <div class="container">
       <div class="row">
@@ -161,4 +289,4 @@
   <script src="assets/js/custom.js"></script>
 
 </body>
-</html>
+</html> 
