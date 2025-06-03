@@ -87,24 +87,62 @@
 
 <div class="container my-4">
 
-  <!-- STEP 1 -->
-  <div id="step1" class="step-content text-center">
-    <h4 class="mb-4">보험 확인하기</h4>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
-            <ul class="text-start">
-              <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
-              <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
-            </ul>
-          </div>
+<!-- Step 1 -->
+<div id="step1" class="step-content text-center">
+  <h4 class="mb-4">
+    보험 확인하기
+    <!-- 꿀단지 아이콘 위치 바로 옆 -->
+    <img src="assets/images/honey-icon.png" alt="꿀팁" style="width:55px; margin-left:15px; vertical-align:middle; cursor:pointer;" onclick="showTipPopup()">
+  </h4>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
+          <ul class="text-start">
+            <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
+            <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<!-- 팝업 (TIPS 제목 제거된 버전) -->
+<div id="tipModal" style="
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+">
+  <p style="font-weight:600;">의료보험 혜택을 최대한 누리는 방법</p>
+  <p style="font-size:15px; margin-top:10px;">
+    아프면 병원에 가요 →<br>
+    국민건강보험으로 병원비 할인 →<br>
+    국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
+  </p>
+  <button onclick="closeTipPopup()" style="margin-top: 15px; padding: 8px 20px; background-color: #34ccc8; border: none; color: white; border-radius: 5px;">확인</button>
+</div>
+
+<script>
+  function showTipPopup() {
+    document.getElementById("tipModal").style.display = "block";
+  }
+  function closeTipPopup() {
+    document.getElementById("tipModal").style.display = "none";
+  }
+</script>
   <!-- STEP 2 -->
   <div id="step2" class="step-content d-none text-center">
     <h4 class="mb-4">병원 선택하기</h4>
