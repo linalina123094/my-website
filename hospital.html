@@ -7,14 +7,11 @@
   <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
   <style>
     body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
-
-    /* 체크박스 색상 통일 */
     input[type="checkbox"] {
       accent-color: #34ccc8;
       width: 20px;
       height: 20px;
     }
-
     .step-btn {
       margin: 5px;
       padding: 10px 20px;
@@ -33,14 +30,12 @@
       background-color: #34ccc8;
       color: white;
     }
-
     .tip-icon, .magnifier-icon { 
       width: 32px; 
       vertical-align: middle; 
       margin-left: 5px; 
       cursor: pointer; 
     }
-
     .checklist-item {
       padding: 10px; 
       border: 1px solid #ddd; 
@@ -76,9 +71,10 @@
     </div>
   </header>
 
-  <!-- 메인배너 (기존 이미지 사용 방식 유지) -->
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="min-height: 300px;">
+  <!-- 병원 이용 메인배너 (배너 통일 적용본) -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="min-height: 300px; position: relative;">
     <img src="assets/images/banner-dec-left.png" alt="" style="position:absolute; left:0; top:0; height:300px;">
+    <img src="assets/images/banner-dec-right.png" alt="" style="position:absolute; right:0; top:0; height:300px;">
     <div class="container text-center">
       <h2 class="mt-5">병원 이용하기</h2>
       <p class="mt-3">유학생을 위한 병원 이용 단계별 가이드</p>
@@ -192,7 +188,6 @@
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
     function showStep(step) {
