@@ -87,11 +87,12 @@
 
 <div class="container my-4">
 
-<!-- Step 1 -->
+<!-- STEP 1 -->
 <div id="step1" class="step-content text-center">
-  <h4 class="mb-4">
-    보험 확인하기 
-    <img src="assets/images/honey-icon.png" style="width:35px; cursor:pointer;" onclick="showTip()">
+  <h4 class="mb-4 d-flex justify-content-center align-items-center" style="gap: 10px;">
+    보험 확인하기
+    <!-- 꿀팁 아이콘 버튼 -->
+    <img src="assets/images/honey-icon.png" alt="꿀팁" style="width: 40px; cursor: pointer;" onclick="showTipModal()">
   </h4>
 
   <div class="row justify-content-center">
@@ -107,28 +108,35 @@
       </div>
     </div>
   </div>
-</div>
 
-<!-- 꿀팁 팝업 -->
-<div class="modal fade" id="tipModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-4 text-center">
-      <h5 style="font-weight:bold; font-size: 22px;">의료보험 혜택을 최대한 누리는 방법</h5>
-      <div class="mt-3 mb-3" style="font-size:16px;">
-        아프면 병원에 가요 →<br>
-        국민건강보험으로 병원비 할인 →<br>
-        국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
+  <!-- 팝업 모달 -->
+  <div class="modal fade" id="tipModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 text-center shadow-lg" style="
+          border-radius: 20px;
+          max-width: 400px;
+          margin: auto;
+          top: 180px;
+          transform: translateY(60px);
+        ">
+        <h5 style="font-weight:bold; font-size: 22px; margin-bottom: 20px;">
+          의료보험 혜택을 최대한 누리는 방법
+        </h5>
+        <div style="font-size:16px; line-height: 1.7;">
+          아프면 병원에 가요 <br>
+          국민건강보험으로 병원비 할인 <br>
+          국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
+        </div>
+        <button class="btn mt-4" style="background-color:#34ccc8; color:white; padding: 10px 30px; border-radius: 10px;" data-bs-dismiss="modal">확인</button>
       </div>
-      <button class="btn" style="background-color:#34ccc8; color:white;" data-bs-dismiss="modal">확인</button>
     </div>
   </div>
 </div>
 
-<!-- 팝업 실행 스크립트 -->
 <script>
-  function showTip() {
-    var myModal = new bootstrap.Modal(document.getElementById('tipModal'));
-    myModal.show();
+  function showTipModal() {
+    const modal = new bootstrap.Modal(document.getElementById('tipModal'));
+    modal.show();
   }
 </script>
   <!-- STEP 2 -->
