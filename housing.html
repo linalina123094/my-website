@@ -2,7 +2,6 @@
 <html lang="ko">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="CheckMate 주거 정보">
@@ -19,15 +18,9 @@
   <link rel="stylesheet" href="assets/css/owl.css">
 
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 16px;
-    }
-    h2 {
-      font-weight: 700;
-    }
+    body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
+    h2 { font-weight: 700; }
   </style>
-
 </head>
 
 <body>
@@ -42,47 +35,67 @@
               <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
             </a>
             <ul class="nav">
-              <li class="scroll-to-section"><a href="index.html">Home</a></li>
-              <li class="scroll-to-section"><a href="index.html#features">체크리스트</a></li>
-              <li class="scroll-to-section"><a href="index.html#about">About Us</a></li>
-              <li class="scroll-to-section"><a href="index.html#services">기능</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">체크리스트</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#services">기능</a></li>
+              <li class="scroll-to-section d-flex align-items-center" style="height:100%;">
+                <div class="main-blue-button" style="margin: 0; position: relative;">
+                  <select id="language-select" style="
+                    border: none; 
+                    border-radius: 6px; 
+                    background-color: rgba(255,255,255,0.95); 
+                    color: #333; 
+                    padding: 10px 40px 10px 15px; 
+                    font-size: 16px;
+                    line-height: 1.2;
+                    appearance: none;
+                    min-width: 150px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.15);">
+                    <option value="ko">한국어</option>
+                    <option value="en">English</option>
+                    <option value="mn">Монгол</option>
+                    <option value="zh">中文</option>
+                    <option value="vi">Tiếng Việt</option>
+                  </select>
+                  <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #333;">▼</span>
+                </div>
+              </li>
             </ul>
-            <a class='menu-trigger'>
-              <span>Menu</span>
-            </a>
+            <a class='menu-trigger'><span>Menu</span></a>
           </nav>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- 주거 정보 메인 -->
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="min-height: 300px;">
+  <!-- 메인 배너 -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container text-center">
-      <h2 class="mt-5">🏠 주거 정보</h2>
-      <p class="mt-3">한국에서 집 구하기, 계약서 작성, 중개수수료까지 상세 안내합니다.</p>
+      <h2>🏠 주거 정보</h2>
+      <p>집 계약부터 전입신고까지 필요한 절차를 안내합니다.</p>
     </div>
   </div>
 
   <!-- 본문 내용 -->
   <section class="container my-5">
-    <h3>✔ 집 구하기 체크리스트</h3>
+    <h3>✅ 집 구하기</h3>
     <ul>
-      <li>예산 설정 및 원하는 지역 탐색</li>
-      <li>부동산 중개소 방문 또는 온라인 매물 검색</li>
-      <li>계약서 작성 시 주의사항 확인</li>
-      <li>보증금, 월세, 관리비 상세 확인</li>
+      <li>중개소 방문 또는 온라인 부동산 플랫폼 활용</li>
+      <li>계약 전 주택 상태 및 계약조건 꼼꼼히 확인</li>
     </ul>
 
-    <h3 class="mt-4">✔ 계약 및 입주 절차</h3>
+    <h3 class="mt-4">✅ 계약 시 유의사항</h3>
     <ul>
-      <li>임대차 계약서 서명</li>
-      <li>계약금 및 잔금 이체</li>
-      <li>전입신고 및 확정일자 받기</li>
+      <li>보증금, 월세, 관리비 등 확인</li>
+      <li>임대차 계약서 작성 및 확정일자 받기</li>
     </ul>
 
-    <h3 class="mt-4">✔ 중개수수료 참고</h3>
-    <p>중개수수료는 계약 금액에 따라 달라지며 상한선이 정해져 있습니다. 계약 전 반드시 확인하세요.</p>
+    <h3 class="mt-4">✅ 이사 및 전입신고</h3>
+    <ul>
+      <li>계약 후 전입신고 필수 (거주지 등록)</li>
+      <li>출입국사무소 및 주민센터 신고</li>
+    </ul>
   </section>
 
   <!-- Footer -->
@@ -92,12 +105,7 @@
     </div>
   </footer>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/custom.js"></script>
 
 </body>
-</html
+</html>
