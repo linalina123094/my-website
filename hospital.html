@@ -28,21 +28,18 @@
     .step-btn.active { background-color: #34ccc8; color: white; }
     .check-card { width: 400px; }
     .reset-btn {
-      margin-top: 20px; background-color: #34ccc8; color: white;
+      margin-top: 20px;
+      background-color: #34ccc8; color: white;
       border: none; padding: 10px 20px; border-radius: 5px;
       transition: 0.3s;
     }
     .reset-btn:hover { background-color: #2bbcb9; }
-    .tip-modal {
-      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      background: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      padding: 30px; z-index: 9999; width: 80%; max-width: 400px;
-    }
   </style>
 </head>
 
 <body>
 
+<!-- Header -->
 <header class="header-area header-sticky">
   <div class="container">
     <div class="row"><div class="col-12">
@@ -72,6 +69,7 @@
   </div>
 </header>
 
+<!-- 메인배너 -->
 <div class="main-banner wow fadeIn" id="top">
   <div class="container text-center">
     <h2>🏥 병원 이용하기</h2>
@@ -79,6 +77,7 @@
   </div>
 </div>
 
+<!-- 스텝 버튼 -->
 <div class="container text-center my-4">
   <button class="step-btn active" onclick="showStep(1)">Step 1</button>
   <button class="step-btn" onclick="showStep(2)">Step 2</button>
@@ -88,38 +87,62 @@
 
 <div class="container my-4">
 
-  <!-- STEP 1 -->
-  <div id="step1" class="step-content text-center">
-    <h4 class="mb-4">
-      보험 확인하기
-      <img src="assets/images/honey-icon.png" alt="꿀팁" style="width:50px; height:50px; margin-left:10px; cursor:pointer;" onclick="showTip()">
-    </h4>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
-            <ul class="text-start">
-              <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
-              <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
-            </ul>
-          </div>
+<!-- Step 1 -->
+<div id="step1" class="step-content text-center">
+  <h4 class="mb-4">
+    보험 확인하기
+    <!-- 꿀단지 아이콘 위치 바로 옆 -->
+    <img src="assets/images/honey-icon.png" alt="꿀팁" style="width:55px; margin-left:15px; vertical-align:middle; cursor:pointer;" onclick="showTipPopup()">
+  </h4>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">① 어떤 보험이 필요한가요?</h5>
+          <ul class="text-start">
+            <li><strong>국민건강보험 (의무 가입)</strong><br>외국인 유학생은 자동 가입되며, 매달 보험료를 직접 납부해야 해요.</li>
+            <li class="mt-2"><strong>유학생 단체보험 (학교 제공)</strong><br>국민대학교는 외국인 유학생을 위해 무료 단체보험을 가입해줘요.<br>→ 병원비를 먼저 낸 후, 보험청구를 하면 일부 환급 가능</li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <!-- 꿀팁 팝업 -->
-    <div id="tipModal" class="tip-modal d-none">
-      <h5><strong>의료보험 혜택을 최대한 누리는 방법</strong></h5>
-      <p style="margin-top:15px;">
-        아프면 병원에 가요 →<br>
-        국민건강보험으로 병원비 할인 →<br>
-        국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
-      </p>
-      <button class="btn btn-success mt-3" onclick="hideTip()">확인</button>
-    </div>
   </div>
+</div>
 
+<!-- 팝업 (TIPS 제목 제거된 버전) -->
+<div id="tipModal" style="
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+">
+  <p style="font-weight:600;">의료보험 혜택을 최대한 누리는 방법</p>
+  <p style="font-size:15px; margin-top:10px;">
+    아프면 병원에 가요 →<br>
+    국민건강보험으로 병원비 할인 →<br>
+    국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!
+  </p>
+  <button onclick="closeTipPopup()" style="margin-top: 15px; padding: 8px 20px; background-color: #34ccc8; border: none; color: white; border-radius: 5px;">확인</button>
+</div>
+
+<script>
+  function showTipPopup() {
+    document.getElementById("tipModal").style.display = "block";
+  }
+  function closeTipPopup() {
+    document.getElementById("tipModal").style.display = "none";
+  }
+</script>
   <!-- STEP 2 -->
   <div id="step2" class="step-content d-none text-center">
     <h4 class="mb-4">병원 선택하기</h4>
@@ -154,7 +177,56 @@
   </div>
 
   <!-- STEP 3 -->
-  <!-- (이하는 이전과 동일하게 이어짐 - 생략 가능) -->
+  <div id="step3" class="step-content d-none text-center">
+    <h4 class="mb-4">진료 받기</h4>
+    <div class="container d-flex flex-column align-items-center">
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step3" type="checkbox" id="s3_1">
+          <label class="form-check-label" for="s3_1">여권 또는 외국인등록증 지참</label>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step3" type="checkbox" id="s3_2">
+          <label class="form-check-label" for="s3_2">증상 설명 준비하기</label>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step3" type="checkbox" id="s3_3">
+          <label class="form-check-label" for="s3_3">진료 후 결제하기</label>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step3" type="checkbox" id="s3_4">
+          <label class="form-check-label" for="s3_4">약 처방전 받기 & 약국 가기</label>
+        </div>
+      </div>
+      <button class="reset-btn" onclick="resetStep(3)">초기화</button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div id="step4" class="step-content d-none text-center">
+    <h4 class="mb-4">병원 다녀온 후 해야 할 일</h4>
+    <div class="container d-flex flex-column align-items-center">
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step4" type="checkbox" id="s4_1">
+          <label class="form-check-label" for="s4_1">약 복용 방법 확인하기</label>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-3 p-3 check-card">
+        <div class="form-check text-start">
+          <input class="form-check-input step4" type="checkbox" id="s4_2">
+          <label class="form-check-label" for="s4_2">유학생 단체보험 환급 신청하기</label>
+        </div>
+      </div>
+      <button class="reset-btn" onclick="resetStep(4)">초기화</button>
+    </div>
+  </div>
 
 </div>
 
@@ -165,12 +237,14 @@
 </footer>
 
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <script>
   function showStep(step) {
     document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
     document.getElementById('step' + step).classList.remove('d-none');
     document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.step-btn')[step-1].classList.add('active');
+    localStorage.setItem("currentStep", step);
   }
 
   function resetStep(step) {
@@ -197,14 +271,12 @@
 
   window.onload = function() {
     loadCheckboxState();
-  }
-
-  // 꿀팁 팝업 제어
-  function showTip() {
-    document.getElementById("tipModal").classList.remove("d-none");
-  }
-  function hideTip() {
-    document.getElementById("tipModal").classList.add("d-none");
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      showStep(parseInt(savedStep));
+    } else {
+      showStep(1);
+    }
   }
 </script>
 
