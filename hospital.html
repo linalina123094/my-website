@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>병원 이용하기 - CheckMate</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
+  <style>
+    body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
+    .step-btn { margin: 5px; padding: 10px 20px; font-weight: 600; border-radius: 8px; border: none; }
+    .step-btn.active { background-color: #2ecc71; color: white; }
+    .tip-icon, .magnifier-icon { width: 24px; vertical-align: middle; margin-right: 5px; cursor: pointer; }
+    .checklist-item { padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; }
+    .checklist-item input { margin-right: 10px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+              <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
+            </a>
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">체크리스트</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#services">기능</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 제목 -->
+  <div class="container text-center mt-5">
+    <h2>병원 이용하기</h2>
+    <p class="mb-4">유학생을 위한 병원 이용 단계별 가이드</p>
+
+    <!-- 스텝 버튼 -->
+    <div>
+      <button class="step-btn active" onclick="showStep(1)">Step 1</button>
+      <button class="step-btn" onclick="showStep(2)">Step 2</button>
+      <button class="step-btn" onclick="showStep(3)">Step 3</button>
+      <button class="step-btn" onclick="showStep(4)">Step 4</button>
+    </div>
+  </div>
+
+  <!-- 스텝별 내용 -->
+  <div class="container my-4">
+    <!-- Step 1 -->
+    <div id="step1" class="step-content">
+      <h4>보험 확인하기 
+        <img src="assets/images/tip-icon.png" class="tip-icon" onclick="showModal('tip1')">
+      </h4>
+
+      <div class="border rounded p-3 mb-3">
+        <strong>국민건강보험 (의무 가입)</strong>
+        <ul>
+          <li>외국인 유학생은 자동 가입 (매달 보험료 납부)</li>
+          <li>납부 마감일: 매달 25일까지</li>
+          <li>납부 방법: 앱 / 은행 / 카드결제</li>
+        </ul>
+      </div>
+
+      <div class="border rounded p-3 mb-3">
+        <strong>유학생 단체보험 (학교 제공)</strong>
+        <ul>
+          <li>병원비 선납 → 보험청구 → 일부 환급 가능</li>
+        </ul>
+      </div>
+
+      <div class="border rounded p-3 mb-3 text-danger">
+        <strong>보험 미가입 시</strong>
+        <ul>
+          <li>병원비 매우 비쌈</li>
+          <li>외국인등록증 연장 불가 가능성</li>
+          <li>유학생 보험 환급 불가</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="step-content d-none">
+      <h4>병원 선택하기 
+        <img src="assets/images/magnifier-icon.png" class="magnifier-icon" onclick="showModal('magnifier2')">
+      </h4>
+
+      <div class="checklist-item">
+        <input type="checkbox"> 외국인 진료 가능한 병원 찾기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 예약 필수 여부 확인하기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 진료비용 및 보험적용 여부 확인
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="step-content d-none">
+      <h4>진료받기</h4>
+
+      <div class="checklist-item">
+        <input type="checkbox"> 여권, 외국인등록증 지참하기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 진료 후 결제 및 영수증 수령하기
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="step-content d-none">
+      <h4>보험금 청구하기</h4>
+
+      <div class="checklist-item">
+        <input type="checkbox"> 병원비 납부 영수증 준비
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 보험금 청구서 작성 후 제출
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 보험금 입금 확인
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업 모달 -->
+  <div class="modal fade" id="popupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <h5 id="popupTitle"></h5>
+        <p id="popupContent"></p>
+        <button class="btn btn-success mt-3" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container text-center">
+      <p>Copyright © 2025 CheckMate. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showStep(step) {
+      document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
+      document.querySelector('#step' + step).classList.remove('d-none');
+      document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.step-btn')[step - 1].classList.add('active');
+    }
+
+    function showModal(type) {
+      const modal = new bootstrap.Modal(document.getElementById('popupModal'));
+      if (type === 'tip1') {
+        document.getElementById('popupTitle').innerText = "꿀팁: 의료보험 혜택";
+        document.getElementById('popupContent').innerText = "아프면 병원에 가요 → 국민건강보험으로 병원비 할인 → 국민대 유학생 단체보험으로 내가 낸 병원비 일부 환급!";
+      }
+      if (type === 'magnifier2') {
+        document.getElementById('popupTitle').innerText = "돋보기: 외국인 진료 병원 찾기";
+        document.getElementById('popupContent').innerText = "일부 병원은 외국어 진료, 국제클리닉을 운영합니다. 가능 여부를 사전에 문의하세요.";
+      }
+      modal.show();
+    }
+  </script>
+
+</body>
+</html>
