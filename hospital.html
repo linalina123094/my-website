@@ -5,12 +5,12 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="CheckMate 비자 정보">
+  <meta name="description" content="CheckMate 병원 이용하기">
   <meta name="author" content="CheckMate">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <title>CheckMate - 비자 정보</title>
+  <title>CheckMate - 병원 이용하기</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -19,13 +19,52 @@
   <link rel="stylesheet" href="assets/css/owl.css">
 
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 16px;
+    body { font-family: 'Open Sans', sans-serif; font-size: 16px; }
+
+    input[type="checkbox"] {
+      accent-color: #34ccc8;
+      width: 20px;
+      height: 20px;
     }
-    h2 {
-      font-weight: 700;
+
+    .step-btn {
+      margin: 5px;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      background-color: #ecf9f8;
+      color: #34ccc8;
+      transition: 0.3s;
     }
+
+    .step-btn:hover {
+      background-color: #2bbcb9;
+      color: white;
+    }
+
+    .step-btn.active {
+      background-color: #34ccc8;
+      color: white;
+    }
+
+    .tip-icon, .magnifier-icon { 
+      width: 32px; 
+      vertical-align: middle; 
+      margin-left: 5px; 
+      cursor: pointer; 
+    }
+
+    .checklist-item {
+      padding: 10px; 
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+      margin-bottom: 10px; 
+      display: flex; 
+      align-items: center;
+    }
+
+    .checklist-item input { margin-right: 10px; }
   </style>
 
 </head>
@@ -42,10 +81,10 @@
               <h4>체크메이트 <img src="assets/images/logo-icon.png" alt=""></h4>
             </a>
             <ul class="nav">
-              <li class="scroll-to-section"><a href="index.html">Home</a></li>
-              <li class="scroll-to-section"><a href="index.html#features">체크리스트</a></li>
-              <li class="scroll-to-section"><a href="index.html#about">About Us</a></li>
-              <li class="scroll-to-section"><a href="index.html#services">기능</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">체크리스트</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#services">기능</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -56,36 +95,98 @@
     </div>
   </header>
 
-  <!-- 비자 정보 메인 -->
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="min-height: 300px;">
-    <div class="container text-center">
-      <h2 class="mt-5">🏥 병원 이용하기</h2>
-      <p class="mt-3">보험 확인부터 진료, 보험금 청구까지 단계별로 안내합니다.</p>
+  <!-- 병원 이용하기 메인배너 -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <img src="assets/images/banner-dec-left.png" class="left-dec">
+    <img src="assets/images/banner-dec-right.png" class="right-dec">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>🏥 병원 이용하기</h2>
+          <p>보험 확인부터 진료, 보험금 청구까지 단계별로 안내합니다.</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- 본문 내용 -->
-  <section class="container my-5">
-    <h3>✔ 비자 신청</h3>
-    <ul>
-      <li>입학허가서, 재정증명서 등 구비서류 준비</li>
-      <li>출입국사무소 또는 온라인 비자 신청</li>
-      <li>비자 발급 결과 수령</li>
-    </ul>
+  <!-- 스텝 버튼 -->
+  <div class="container text-center my-4">
+    <button class="step-btn active" onclick="showStep(1)">Step 1</button>
+    <button class="step-btn" onclick="showStep(2)">Step 2</button>
+    <button class="step-btn" onclick="showStep(3)">Step 3</button>
+    <button class="step-btn" onclick="showStep(4)">Step 4</button>
+  </div>
 
-    <h3 class="mt-4">✔ 비자 연장</h3>
-    <ul>
-      <li>체류 만료일 2~3개월 전부터 연장 신청 가능</li>
-      <li>재학증명서, 출석증명서, 재정증명서 등 제출</li>
-      <li>출입국사무소 방문 또는 온라인 신청</li>
-    </ul>
+  <!-- 스텝별 내용 -->
+  <div class="container my-4">
+    <!-- Step 1 -->
+    <div id="step1" class="step-content">
+      <h4>보험 확인하기</h4>
+      <div class="border rounded p-3 mb-3">
+        <strong>국민건강보험 (의무 가입)</strong>
+        <ul>
+          <li>외국인 유학생은 자동 가입 (매달 보험료 납부)</li>
+          <li>납부 마감일: 매달 25일까지</li>
+          <li>납부 방법: 앱 / 은행 / 카드결제</li>
+        </ul>
+      </div>
 
-    <h3 class="mt-4">✔ 출입국 신고</h3>
-    <ul>
-      <li>입국 후 90일 이내 외국인등록증 신청</li>
-      <li>주소 변경 시 전입신고 필수</li>
-    </ul>
-  </section>
+      <div class="border rounded p-3 mb-3">
+        <strong>유학생 단체보험 (학교 제공)</strong>
+        <ul>
+          <li>병원비 선납 → 보험청구 → 일부 환급 가능</li>
+        </ul>
+      </div>
+
+      <div class="border rounded p-3 mb-3 text-danger">
+        <strong>보험 미가입 시</strong>
+        <ul>
+          <li>병원비 매우 비쌈</li>
+          <li>외국인등록증 연장 불가 가능성</li>
+          <li>유학생 보험 환급 불가</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="step-content d-none">
+      <h4>병원 선택하기</h4>
+      <div class="checklist-item">
+        <input type="checkbox"> 외국인 진료 가능한 병원 찾기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 예약 필수 여부 확인하기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 진료비용 및 보험적용 여부 확인
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="step-content d-none">
+      <h4>진료받기</h4>
+      <div class="checklist-item">
+        <input type="checkbox"> 여권, 외국인등록증 지참하기
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 진료 후 결제 및 영수증 수령하기
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="step-content d-none">
+      <h4>보험금 청구하기</h4>
+      <div class="checklist-item">
+        <input type="checkbox"> 병원비 납부 영수증 준비
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 보험금 청구서 작성 후 제출
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox"> 보험금 입금 확인
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="mt-5">
@@ -94,12 +195,16 @@
     </div>
   </footer>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- 스크립트 -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script>
+    function showStep(step) {
+      document.querySelectorAll('.step-content').forEach(el => el.classList.add('d-none'));
+      document.querySelector('#step' + step).classList.remove('d-none');
+      document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.step-btn')[step - 1].classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
